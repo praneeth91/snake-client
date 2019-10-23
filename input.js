@@ -11,18 +11,16 @@ const setupInput = function(conn) {
 const handleUserInput = function(data){
   if (data === "\u0003"){
     process.exit();
-  } else if (data ==="w"){
+  } else if (data === "w"){
    connection.write("Move: up");
-    //console.log("Move up");
-  } else if (data ==="a"){
+  } else if (data === "a"){
     connection.write("Move: left");
-    //console.log("Move left");
-  } else if (data ==="s"){
+  } else if (data === "s"){
     connection.write("Move: down");
-    //console.log("Move right");
-  } else if (data ==="d"){
+  } else if (data === "d"){
     connection.write("Move: right");
-    //console.log("Move down");
+  } else if (data === "b"){
+    connection.write("Say: Hello");
   }
 }
 module.exports = {setupInput};

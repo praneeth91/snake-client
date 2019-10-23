@@ -9,22 +9,12 @@ const connect = function() {
     conn.write("Name: PKP");
   })
 
-  // interpret incoming data as text
   conn.setEncoding('utf8'); 
 
   conn.on('data', (data) => {
     console.log(data)
   })
   
-    
-    /*setTimeout(() => {
-      conn.write("Move: up");
-    },1000);*/
-
-
-
-  
-
   return conn;
 }
 module.exports = {connect};
