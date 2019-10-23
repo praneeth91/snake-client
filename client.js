@@ -4,6 +4,10 @@ const connect = function() {
     host: '192.168.88.149',
     port: 50541
   });
+  conn.on('connect', (connect) => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: PKP");
+  })
 
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
@@ -11,9 +15,7 @@ const connect = function() {
   conn.on('data', (data) => {
     console.log(data)
   })
-  conn.on('connect', (connect) => {
-    console.log("Successfully connected to game server");
-    conn.write("Name: PKP");
+  
     
     /*setTimeout(() => {
       conn.write("Move: up");
@@ -21,9 +23,8 @@ const connect = function() {
 
 
 
-  })
   
 
   return conn;
 }
-module.exports = connect;
+module.exports = {connect};
